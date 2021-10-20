@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="teacher_info_form_view" model="ir.ui.view">
+            <field name="name">teacher.info.form.view</field>
+            <field name="model">teacher.info</field>
+            <field name="arch" type="xml">
+                <form string="Teacher">
+                    <sheet>
+                        <group col="4">
+                            <field name="teacher_name"/>
+                            <field name="class_teacher"/>
+                            <field name="division"/>
+                            <field name="subject"/>
+                            <field name="gender"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="teacher_info_tree_view" model="ir.ui.view">
+            <field name="name">teacher.info.tree.view</field>
+            <field name="model">teacher.info</field>
+            <field name="arch" type="xml">
+                <tree string="Tags">
+                    <field name="teacher_name"/>
+                    <field name="class_teacher"/>
+                    <field name="division"/>
+                    <field name="subject"/>
+                    <field name="gender"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="teacher_action_view" model="ir.actions.act_window">
+            <field name="name">Teacher Info</field>
+            <field name="res_model">teacher.info</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                id="teacher_info_child_menu"
+                parent="school_erp.student_base_menu"
+                name="Teacher Info and Customers"
+                sequence="1"/>
+        <menuitem
+                id="teacher_info_child1_menu"
+                action="teacher_action_view"
+                parent="school_erp.teacher_info_child_menu"
+                name="Teacher Info"
+                sequence="0"/>
+        <menuitem
+                id="teacher_info_child2_menu"
+                action="base.action_partner_form"
+                parent="school_erp.teacher_info_child_menu"
+                name="Customers"
+                sequence="1"/>
+
+
+    </data>
+</odoo>

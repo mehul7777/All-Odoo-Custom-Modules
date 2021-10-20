@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="weather_info_form_view" model="ir.ui.view">
+            <field name="name">weather.info.form.view</field>
+            <field name="model">weather.info</field>
+            <field name="arch" type="xml">
+                <form string="Weather">
+                    <sheet>
+                        <group col="4">
+                            <field name="city"/>
+                            <field name="state_code"/>
+                            <field name="wind_direction"/>
+                            <field name="clouds"/>
+                            <field name="description"/>
+<!--                            <button name="onchange_partner_id" string="Submit" type="object" class="btn-primary"/>-->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="weather_info_tree_view" model="ir.ui.view">
+            <field name="name">weather.info.tree.view</field>
+            <field name="model">weather.info</field>
+            <field name="arch" type="xml">
+                <tree string="Tags">
+                    <field name="city"/>
+                    <field name="state_code"/>
+                    <field name="wind_direction"/>
+                    <field name="clouds"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="weather_action_view" model="ir.actions.act_window">
+            <field name="name">Weather Info</field>
+            <field name="res_model">weather.info</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem
+                id="weather_info_child_menu"
+                action="weather_action_view"
+                parent="school_erp.student_base_menu"
+                name="Weather Info"
+                sequence="1"/>
+
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="college_info_form_view" model="ir.ui.view">
+            <field name="name">college.info.form.view</field>
+            <field name="model">college.info</field>
+            <field name="arch" type="xml">
+                <form string="College">
+                    <sheet>
+                        <group col="4">
+                            <field name="college_name"/>
+                            <field name="college_address"/>
+                            <field name="principle_name"/>
+                            <field name="vice_principle_name"/>
+                            <field name="total_no_of_staff"/>
+                            <field name="total_no_of_student"/>
+                            <field name="contact_no"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="college_info_tree_view" model="ir.ui.view">
+            <field name="name">college.info.tree.view</field>
+            <field name="model">college.info</field>
+            <field name="arch" type="xml">
+                <tree string="Tags">
+                    <field name="college_name"/>
+                    <field name="college_address"/>
+                    <field name="principle_name"/>
+                    <field name="vice_principle_name"/>
+                    <field name="total_no_of_staff"/>
+                    <field name="total_no_of_student"/>
+                    <field name="contact_no"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="college_action_view" model="ir.actions.act_window">
+            <field name="name">College Info</field>
+            <field name="res_model">college.info</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem
+                id="college_base_menu"
+                name = "College"
+                sequence="0"/>
+        <menuitem
+                id="college_info_child_menu"
+                action="college_action_view"
+                parent="college_erp.college_base_menu"
+                name="College Info"
+                sequence="1"/>
+
+
+    </data>
+</odoo>

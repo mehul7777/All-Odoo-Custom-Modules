@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_inherit_view_training" model="ir.ui.view">
+            <field name="name">res.partner.inherit.view.training</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page string="Other Expenses">
+                        <field name="product_ids">
+                                <tree editable="bottom">
+                                    <field name="res_id"/>
+                                    <field name="quantity"/>
+                                    <field name="price"/>
+                                    <field name="res_uom"/>
+                                </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+
+</odoo>

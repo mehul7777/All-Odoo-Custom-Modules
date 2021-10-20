@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hotel_info_form_view" model="ir.ui.view">
+            <field name="name">hotel.info.form.view</field>
+            <field name="model">hotel.info</field>
+            <field name="arch" type="xml">
+                <form string="Hotel">
+                    <sheet>
+                        <group>
+<!--                            <field name="hotel_name"/>-->
+                            <field name="room_number"/>
+                            <field name="floor_number"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hotel_info_tree_view" model="ir.ui.view">
+            <field name="name">hotel.info.tree.view</field>
+            <field name="model">hotel.info</field>
+            <field name="arch" type="xml">
+                <tree string="Tags">
+<!--                    <field name="hotel_name"/>-->
+                    <field name="room_number"/>
+                    <field name="floor_number"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="hotel_action_view" model="ir.actions.act_window">
+            <field name="name">Hotel Info</field>
+            <field name="res_model">hotel.info</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                id="hotel_info_child_menu"
+                name="Hotel Management"
+                sequence="0"/>
+        <menuitem
+                id="hotel_info_child1_menu"
+                parent="hotel_management_erp.hotel_info_child_menu"
+                name="Hotel Management"
+                sequence="1"/>
+        <menuitem
+                id="hotel_info_child2_menu"
+                action="hotel_action_view"
+                parent="hotel_management_erp.hotel_info_child1_menu"
+                name="Rooms"
+                sequence="0"/>
+
+    </data>
+</odoo>

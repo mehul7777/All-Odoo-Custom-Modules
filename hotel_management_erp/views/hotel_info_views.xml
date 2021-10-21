@@ -8,6 +8,14 @@
             <field name="arch" type="xml">
                 <form string="Hotel">
                     <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_open_sale_order_cust" type="object" class="oe_stat_button" icon="fa-calendar">
+                                <div class="o_stat_info">
+                                    <field name="room_number" class="o_stat_value"/>
+                                    <span class="o_stat_text">Room Number of Customer</span>
+                                </div>
+                            </button>
+                        </div>
                         <group>
 <!--                            <field name="hotel_name"/>-->
                             <field name="room_number"/>
